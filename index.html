@@ -12,13 +12,39 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>String Tool</h1>
-    <main>
-      <div class="container">
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="navbar-item">String Tool</div>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <button id="about" class="button is-link">About</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-link is-hidden">
+      <div class="hero-body">
+        <p class="title">About this page</p>
+        <p class="subtitle">
+          This is a small project to accomplish a comparison between two
+          strings. In the comparison, I'm looking to split the strings on any
+          space or comma, then identify which terms are unique to each string
+          and which terms are shared between the two. This helps me troubleshoot
+          issues more quickly by ensuring that required terms are present and
+          potentially identifying areas for further investigation.
+        </p>
+        <p class="subtitle">Is this tool going to be useful for you?</p>
+        <p class="subtitle">Probably not :)</p>
+      </div>
+    </section>
+    <div class="container mt-4">
+      <main>
         <div class="columns">
           <div class="column">
             <div class="field">
-              <label class="label has-text-centered">Editor One</label>
+              <label class="label has-text-centered">List One</label>
               <div class="control">
                 <textarea
                   id="features-one"
@@ -31,7 +57,7 @@
           </div>
           <div class="column">
             <div class="field">
-              <label class="label has-text-centered">Editor Two</label>
+              <label class="label has-text-centered">List Two</label>
               <div class="control">
                 <textarea
                   id="features-two"
@@ -55,7 +81,7 @@
           </div>
         </div>
         <hr />
-        <div class="columns">
+        <div class="columns mb-6">
           <div class="column">
             <div class="card">
               <div class="card-header">
@@ -93,8 +119,22 @@
             </div>
           </div>
         </div>
+      </main>
+    </div>
+    <nav class="navbar is-light">
+      <div class="navbar-menu">
+        <div class="navbar-item">
+          <a
+            href="https://github.com/Jheller11/stringtool"
+            class="href"
+            target="_blank"
+          >
+            jheller11.github.io
+          </a>
+        </div>
       </div>
-    </main>
+    </nav>
+
     <script src="script.js"></script>
   </body>
 </html>

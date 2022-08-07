@@ -1,0 +1,15 @@
+#unique-list-one li {
+  color: blue;
+}
+
+#unique-list-two li {
+  color: red;
+}
+
+#shared-list li {
+  color: purple;
+}
+
+main {
+  min-height: 85vh;
+}
