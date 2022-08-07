@@ -1,4 +1,4 @@
-// Declare variables for processing input in processFeaturesToLists()
+//  Arrays for processing input in processFeaturesToLists()
 let combinedFeaturesArray = []
 let uniqueFeaturesArrayOne = []
 let uniqueFeaturesArraytwo = []
@@ -16,8 +16,12 @@ let clearButton = document.querySelector('#clear-button')
 // Hero "About"
 let hero = document.querySelector('.hero')
 let aboutButton = document.querySelector('#about')
+// List label totals
+let itemCountOne = document.querySelector('#item-count-one')
+let itemCountShared = document.querySelector('#item-count-shared')
+let itemCountTwo = document.querySelector('#item-count-two')
 
-// Generate a new array of unique values from the input string
+// Generate a new array of unique values from the input string, filter out blanks
 const splitString = (string) => {
   let featuresArray = string.split(/,| /)
   return [...new Set(featuresArray.filter((s) => s.length > 0))]
@@ -35,7 +39,7 @@ const processFeaturesToLists = (A, B) => {
   })
 }
 
-// Clear inputs, lists, and arrays
+// Clear inputs, lists, and arrays, UI elements
 const resetPage = () => {
   featuresInputOne.value = ''
   featuresInputTwo.value = ''
@@ -45,6 +49,9 @@ const resetPage = () => {
   uniqueListOne.innerHTML = ''
   uniqueListTwo.innerHTML = ''
   sharedList.innerHTML = ''
+  itemCountOne.innerText = ''
+  itemCountShared.innerText = ''
+  itemCountTwo.innerText = ''
 }
 
 // Control flow when "Compare" button is clicked
@@ -54,6 +61,7 @@ const compareStrings = () => {
   if (a.length > 0 && b.length > 0) {
     processFeaturesToLists(splitString(a), splitString(b))
     loadLists()
+    displayTotals()
   } else {
     // createAlert() -- create a mechanism to alert errors
   }
@@ -76,6 +84,13 @@ const loadLists = () => {
     listItem.innerText = word
     uniqueListTwo.appendChild(listItem)
   })
+}
+
+// Function to update the list value totals
+const displayTotals = () => {
+  itemCountOne.innerText = ': ' + uniqueFeaturesArrayOne.length.toString()
+  itemCountShared.innerText = ': ' + combinedFeaturesArray.length.toString()
+  itemCountTwo.innerText = ': ' + uniqueFeaturesArraytwo.length.toString()
 }
 
 // Function to toggle the "About" hero based on user click in header
