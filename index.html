@@ -5,8 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>String Tool</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
     <script src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1>String Tool</h1>
+    <main>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label has-text-centered">Editor One</label>
+              <div class="control">
+                <textarea
+                  id="features-one"
+                  class="textarea"
+                  placeholder="Editor One"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label has-text-centered">Editor Two</label>
+              <div class="control">
+                <textarea
+                  id="features-two"
+                  class="textarea"
+                  placeholder="Editor Two"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="compare-button" class="button is-link">Compare</button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Clear</button>
+          </div>
+        </div>
+        <hr />
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-header">
+                <p class="card-header-title">Unique</p>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <ul id="unique-list-one" class="flag-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-header">
+                <p class="card-header-title">Shared</p>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <ul id="shared-list" class="flag-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-header">
+                <p class="card-header-title">Unique</p>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <ul id="unique-list-two" class="flag-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
