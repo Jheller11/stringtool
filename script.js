@@ -39,10 +39,13 @@ const processFeaturesToLists = (A, B) => {
   })
 }
 
-// Clear inputs, lists, and arrays, UI elements
-const resetPage = () => {
-  featuresInputOne.value = ''
-  featuresInputTwo.value = ''
+// Clear all on "Clear" button click or "Compare" button click
+// param action is a string
+const resetPage = (action) => {
+  if (action === 'clear') {
+    featuresInputOne.value = ''
+    featuresInputTwo.value = ''
+  }
   combinedFeaturesArray = []
   uniqueFeaturesArrayOne = []
   uniqueFeaturesArraytwo = []
@@ -56,6 +59,7 @@ const resetPage = () => {
 
 // Control flow when "Compare" button is clicked
 const compareStrings = () => {
+  resetPage('compare')
   let a = featuresInputOne.value
   let b = featuresInputTwo.value
   if (a.length > 0 && b.length > 0) {
@@ -99,7 +103,7 @@ const toggleAbout = () => {
 }
 
 // EVENT LISTENERS START
-clearButton.addEventListener('click', (e) => resetPage())
+clearButton.addEventListener('click', (e) => resetPage('clear'))
 compareButton.addEventListener('click', (e) => {
   compareStrings()
 })
